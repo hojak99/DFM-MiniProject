@@ -50,8 +50,8 @@ class FeedList extends Component {
 
     render() {
 
-        const feedList = this.state.feedList.map(({date, title, writer, contents})=>{
-            return (<Feed date={date} title={title} writer={writer} contents={contents}/>)
+        const feedList = this.state.feedList.map(({date, title, writer, contents}, index)=>{
+            return (<Feed key={index} date={date} title={title} writer={writer} contents={contents}/>)
         });
 
         return (
