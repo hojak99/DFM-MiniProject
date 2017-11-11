@@ -114,3 +114,24 @@
     font-size: 14px;
     color: #6d707b;
 }
+
+/* Global Write Button */
+
+.global-write-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+    height: 54px;
+    line-height: 54px;
+    border-radius: 44px;
+    background-color: #da382e;
+    box-shadow: 0 2px 16px 0 rgba(137, 139, 147, 0.51);
+    text-align: center;
+}
+
+.global-write-button img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
