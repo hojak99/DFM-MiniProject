@@ -1,19 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react'
 
-// todo pure component
-class Title extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>딮숲 이야기</h1>
-            </div>
-        );
-    }
-}
-
+const Title = () =>{
+    return (
+        <div className="title-box">
+            <span className="title">딮숲 이야기</span>
+        </div>
+    );
+};
 export default Title
