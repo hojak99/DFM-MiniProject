@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 
-@RestController("/master")
+@RestController()
 public class MasterController {
 
 	@Autowired
@@ -19,10 +19,13 @@ public class MasterController {
 	
     @RequestMapping("/list.do")
     public ModelAndView list() throws Exception{
+    	
     	ModelAndView mav = new ModelAndView();
     	List<BoardDTO> boardList = new ArrayList<>();
     	boardList = boardMapper.getAllBoardList();
+    	
     	System.out.println(boardList);
+    	
     	mav.addObject("list", boardList);
         return mav;
     }

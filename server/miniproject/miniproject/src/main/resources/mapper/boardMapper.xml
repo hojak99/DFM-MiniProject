@@ -5,7 +5,7 @@
 
 <mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
-	<select id = "getOpenBoardList">
+	<select id = "getOpenBoardList" resultType="java.util.List">
 		select
 			*
 		from
@@ -14,7 +14,7 @@
 			open_yn = 'Y'
 	</select>
 
-	<select id = "getAllBoardList">
+	<select id = "getAllBoardList" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
 		select
 			*
 		from
