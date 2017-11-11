@@ -4,22 +4,22 @@ class Feed extends Component {
 
     constructor(props) {
         super(props);
-    }
+    };
 
     render() {
         return (
-            <div>
-                <div>
-                    <p>Nov. 11 2017</p>
+            <div className="feed">
+                <div className="date">
+                    <span>{this.props.date}</span>
                 </div>
-                <div>
-                    <p>디프만 대나무숲, 모든이들의 자유 공간</p>
+                <div className="title">
+                    <span>{this.props.title}</span>
                 </div>
-                <div>
-                    <p>로로</p>
+                <div className="writer">
+                    <span>{this.props.writer}</span>
                 </div>
-                <div>
-                    여기는 콘텐츠 영역..
+                <div className="contents">
+                    <span>{this.props.contents}</span>
                 </div>
             </div>
         );
