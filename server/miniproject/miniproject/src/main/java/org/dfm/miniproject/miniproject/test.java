@@ -2,12 +2,14 @@ package org.dfm.miniproject.miniproject;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController("/master")
 public class test {
 	@RequestMapping(value="/delete")
-    public String root_test() throws Exception{
-        return "Hello World";
+    public ModelAndView root_test() throws Exception{
+		ModelAndView mav = new ModelAndView();
+        return mav;
     }
  
     @RequestMapping("/demo")
