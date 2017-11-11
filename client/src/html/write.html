@@ -2,12 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>딮숲 - 작성하기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/write.css">
 </head>
 <body>
-<h1>Write</h1>
+  <div class="wrapper">
+    <header>
+      <h1 class="logo">딮숲</h1>
+      <h2>글쓰기</h2>
+      <button class="close">닫기</button>
+    </header>
+    <section class="formArea">
+      <form action="">
+        <h1>글쓰기</h1>
+        <textarea name="text" placeholder="이야기를 풀어보세요." class="textBox"></textarea>
+        <label for="name">닉네임</label>
+        <input id="name" type="text" placeholder="최대 10자" class="inputBox">
+      </form>
+      <button id="submit" class="mainBtn" type="submit">작성하기</button>
+    </section>
+  </div>
 <script src="/js/bundle.write.js"></script>
 </body>
 </html>
