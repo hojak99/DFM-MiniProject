@@ -3,13 +3,27 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        "main": "./src/js/main",
-        "write": "./src/js/write",
-        "admin": "./src/js/admin"
+        "bundle.main": "./src/js/main",
+        "bundle.write": "./src/js/write",
+        "bundle.admin": "./src/js/admin"
     },
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, "build")
+    },
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'stage-0', 'react']
+                    }
+                }
+            }
+        ],
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
@@ -21,11 +35,12 @@ module.exports = {
         disableHostCheck: true,
         port: 3000,
         open: false,
-        openPage: 'html/#/',
         contentBase: "src",
+        publicPath: "/js",
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
         }
-    }
+    },
+    devtool : 'inline-source-map'
 };
