@@ -6,4 +6,7 @@ import org.dfm.miniproject.miniproject.dto.BoardDTO;
 
 public interface BoardMapper {
 	public List<BoardDTO> getAllBoardList();
+	public BoardDTO getBoard(BoardDTO boardDTO);
+	public void delete(BoardDTO boardDTO);
+	public void secret(BoardDTO boardDTO);
 }

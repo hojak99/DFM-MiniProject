@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-
 <mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
 	<select id = "getOpenBoardList">
@@ -14,10 +13,36 @@
 			open_yn = 'Y'
 	</select>
 
-	<select id = "getAllBoardList">
+	<select id = "getAllBoardList" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
 		select
 			*
 		from
 			board
 	</select>
+
+	<select id = "getBoard" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		select
+			*
+		from
+			board
+		where
+			seq = #{seq}
+	</select>
+	
+	<delete id = "delete" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		delete
+		from
+			board
+		where
+			seq = #{seq}
+	</delete>
+
+	<update id = "secret" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		update
+			board
+		set
+			open_yn = #{open_yn}
+		where
+			seq = #{seq}
+	</update>
 </mapper>
