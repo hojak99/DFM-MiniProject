@@ -20,4 +20,10 @@
 		from
 			board
 	</select>
+	
+	<insert id="insertBoard" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		insert into board (title, content, user_id)
+		values 
+		(#{title}, #{content}, #{user_id})
+	</insert>
 </mapper>
