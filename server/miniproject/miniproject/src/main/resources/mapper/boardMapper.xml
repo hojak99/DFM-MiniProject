@@ -3,7 +3,7 @@
 
 
 
-<mapper namespace="org.dfm.miniproject.mapper.boardMapper" >
+<mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
 	<select id = "getOpenBoardList">
 		select

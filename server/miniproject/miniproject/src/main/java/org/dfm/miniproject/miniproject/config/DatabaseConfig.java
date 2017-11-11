@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
-@MapperScan("org.dfm.miniproject.mapper")
+@MapperScan("org.dfm.miniproject.miniproject.mapper")
 public class DatabaseConfig {
 
     @Bean

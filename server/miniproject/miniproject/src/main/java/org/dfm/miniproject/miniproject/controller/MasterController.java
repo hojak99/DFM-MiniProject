@@ -22,6 +22,7 @@ public class MasterController {
     	ModelAndView mav = new ModelAndView();
     	List<BoardDTO> boardList = new ArrayList<>();
     	boardList = boardMapper.getAllBoardList();
+    	System.out.println(boardList);
     	mav.addObject("list", boardList);
         return mav;
     }
