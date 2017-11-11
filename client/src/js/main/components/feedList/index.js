@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import Header from './header'
-import FeedList from './feedList'
+
+import Title from './Title'
+import Feed from './Feed'
+
 class App extends Component {
 
     constructor(props) {
@@ -9,9 +11,9 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Header/>
-                <FeedList/>
+            <div className="feedList">
+                <Title/>
+                <Feed/>
             </div>
         );
     }

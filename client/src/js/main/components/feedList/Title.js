@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Header from './header'
-import FeedList from './feedList'
-class App extends Component {
+
+// todo pure component
+class Title extends Component {
 
     constructor(props) {
         super(props);
@@ -10,11 +10,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <FeedList/>
+                <h1>딮숲 이야기</h1>
             </div>
         );
     }
 }
 
-export default App
+export default Title
