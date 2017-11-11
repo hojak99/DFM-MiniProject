@@ -7,6 +7,7 @@ import org.dfm.miniproject.miniproject.dto.BoardDTO;
 import org.dfm.miniproject.miniproject.mapper.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,7 +18,7 @@ public class MasterController {
 	@Autowired
 	BoardMapper boardMapper;
 	
-    @RequestMapping("/list.do")
+    @RequestMapping(value = "/list.do", method=RequestMethod.GET)
     public ModelAndView list() throws Exception{
     	
     	ModelAndView mav = new ModelAndView();
