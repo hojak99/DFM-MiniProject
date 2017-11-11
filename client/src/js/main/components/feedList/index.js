@@ -7,7 +7,12 @@ class FeedList extends Component {
 
     constructor(props) {
         super(props);
+
+        // CONSTANT
+        this.INFINITE_SCROLL_OFFSET = 50;
+
         this.state = {
+            fetch: false,
             feedList: [
                 {
                     date: 'Nov. 11 2017',
@@ -45,12 +50,23 @@ class FeedList extends Component {
 
                 }
             ]
+        };
+
+    }
+
+    componentDidMount() {
+        // todo fetch Feed List
+        window.addEventListener('scroll', ::this.handleScrollEvent);
+    }
+
+    handleScrollEvent(e) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - this.INFINITE_SCROLL_OFFSET && this.state.fetch) {
+            console.log("you're at the bottom of the page");
         }
     }
 
     render() {
-
-        const feedList = this.state.feedList.map(({date, title, writer, contents}, index)=>{
+        const feedList = this.state.feedList.map(({date, title, writer, contents}, index) => {
             return (<Feed key={index} date={date} title={title} writer={writer} contents={contents}/>)
         });
 

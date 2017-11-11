@@ -6,6 +6,11 @@ class Header extends Component {
         super(props);
     }
 
+    handleClickWriteButton(){
+        // todo add redirect url
+        console.log('redirect write page');
+    }
+
     render() {
         return (
             <div className="header">
@@ -14,7 +19,7 @@ class Header extends Component {
                     <span>딮숲</span>
                 </div>
                 <div className="header-right">
-                    <button className="write-button">작성하기</button>
+                    <button className="write-button" onClick={::this.handleClickWriteButton}>작성하기</button>
                 </div>
             </div>
         );
