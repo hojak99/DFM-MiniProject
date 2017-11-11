@@ -1,0 +1,42 @@
+body {
+  font-family: 'PT Sans', 'Nanum Barun Gothic', sans-serif;
+}
+.wrapper {
+  padding: 0 16px;
+}
+header {
+  width: 100%;
+  height: 28px;
+  margin: 24px 0;
+}
+.logo {
+  float: left;
+  background: url(../img/logo@2x.png) no-repeat;
+  background-size: 25px 28px;
+  text-indent: -9999px;
+}
+header h2 {
+  display: block;
+  float: left;
+  margin-left: 8px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -.3;
+}
+.close {
+  float: right;
+  width: 17px;
+  height: 17px;
+  margin-top: 5px;
+  background: url(../img/cancel@2x.png) no-repeat;
+  background-size: 17px;
+  line-height: 28px;
+  text-indent: -9999px;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
