@@ -1,64 +1,82 @@
-// 사용자
-글쓰기 (/user/write.do)
-{
-    type : create
-    {
-        seq : (글번호)
-        id : (유저닉네임)
-        content : (글내용)
-        crt_time : (작성시간)
-    }
-}
+<b>모든 key-value는 쌍따옴표(")로 쌓여있다.</b><br>
+<b>최상위 key는 type과 data뿐이다.</b> type을 제외한 정보는 data안에 위치한다.<br>
 
-조회 (/user/list.do)
-{
-    type : read
-    {
-       seq : (글번호) 
-       content : (글내용)
-       crt_time : (작성시간)
-    }
-    {
-        seq : (글번호) 
-       content : (글내용)
-       crt_time : (작성시간)
-    } 
-    {
-        seq : (글번호) 
-       content : (글내용)
-       crt_time : (작성시간)
-    } 
-    .... 
-}
+예 ) "type" : "GOOGLE"
 
-
-// 관리자
-
-삭제 (/master/delete.do)
-{
-    type : delete
-    {
-        seq : (글번호)
-    }   
-}
-
-숨기기/열기 (/master/secret.do)
-{
-    type : update
-    open : true / false
-    {
-        seq : (글번호)
-    }
-}
-
-전체조회 (/master/list.do)
-{
-    type : read
-    {
-        seq : (글번호) 
-        open : true / false
-        id : (닉네임)
-        content : (글내용)
-        crt_time : (작성시간)
-    }
-}
+<table>
+    <tbody>
+    <tr>
+        <th></th>
+        <th align=left>Client->Server</th>
+        <th align=left>Server->Client</th>
+    </tr>
+    <tr>
+        <td>글쓰기</td>
+        <td align="center">-</td>
+        <td>
+            type : CREATE,<br>
+            seq : (글번호), <br>
+            userId : (유저닉네임), <br>
+            content : (글내용), <br>
+            crt_time : (작성시간) <br>
+        </td>
+    </tr>
+    <tr>
+        <td>조회</td>
+        <td align="center">-</td>
+        <td>
+            type : READ<br>
+            list: [<br>
+            {<br>
+                seq : (글번호) ,<br>
+                content : (글내용),<br>
+                crt_time : (작성시간)<br>
+            },<br>
+            {<br>
+                seq : (글번호) ,<br>
+                content : (글내용),<br>
+                crt_time : (작성시간)<br>
+            }...]<br>
+        </td>
+    </tr>
+    <tr>
+        <td>삭제</td>
+        <td align="center">-</td>
+        <td>
+            type : DELTE,<br>
+            seq : (글번호)<br>
+        </td>
+    </tr>
+    <tr>
+        <td>숨기기/열기</td>
+        <td align="center">-</td>
+        <td>
+            type : READ,<br>
+            open : true / false<br>        
+        </td>
+    </tr>
+    <tr>     
+        <td>전체조회</td>
+        <td align="center">-</td>
+        <td>
+            type : READ,<br>
+            list: [<br>
+            {<br>
+                seq : (글번호) 
+                open : true / false
+                userId : (닉네임)
+                content : (글내용)
+                crt_time : (작성시간)
+            },<br>
+            {<br>
+                seq : (글번호) 
+                open : true / false
+                userId : (닉네임)
+                content : (글내용)
+                crt_time : (작성시간)
+            }...]<br>
+        </td>
+    </tr>
+</tr>
+    </tbody>
+</table>
