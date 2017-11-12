@@ -68,6 +68,7 @@ body {
     border: solid 1px #ececef;
     border-radius: 5px;
     box-shadow: 0 8px 18px 0 rgba(137, 139, 147, 0.13);
+    word-break: keep-all;
 }
 
 .feed:last-child {
