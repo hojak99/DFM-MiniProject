@@ -7,8 +7,7 @@ class Header extends Component {
     }
 
     handleClickWriteButton(){
-        // todo add redirect url
-        console.log('redirect write page');
+        location.href = "write.html";
     }
 
     render() {
