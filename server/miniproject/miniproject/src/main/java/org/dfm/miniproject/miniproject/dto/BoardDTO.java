@@ -90,7 +90,9 @@ public class BoardDTO {
 	@Override
 	public String toString() {
 		return "BoardDTO [seq=" + seq + ", title=" + title + ", content=" + content + ", user_id=" + user_id
-				+ ", open_yn=" + open_yn + ", crt_time=" + crt_time + "]";
+				+ ", open_yn=" + open_yn + ", crt_time=" + crt_time + ", offset=" + offset + ", count=" + count
+				+ ", nextOffset=" + nextOffset + "]";
 	}
+
 
 }

@@ -14,35 +14,38 @@
 	</select>
 
 	<select id = "getAllBoardList" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
-		select
+		SELECT
 			*
-		from
+		FROM
 			board
+		ORDER BY
+			seq DESC
+		LIMIT #{offset}, #{count}
 	</select>
 
 	<select id = "getBoard" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
-		select
+		SELECT
 			*
-		from
+		FROM
 			board
-		where
+		WHERE
 			seq = #{seq}
 	</select>
 	
 	<delete id = "delete" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
-		delete
-		from
+		DELETE
+		FROM
 			board
-		where
+		WHERE
 			seq = #{seq}
 	</delete>
 
 	<update id = "secret" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
-		update
+		UPDATE
 			board
-		set
+		SET
 			open_yn = #{open_yn}
-		where
+		WHERE
 			seq = #{seq}
 	</update>
 

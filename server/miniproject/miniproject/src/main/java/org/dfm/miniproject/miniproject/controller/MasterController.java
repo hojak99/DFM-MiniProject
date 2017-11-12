@@ -5,16 +5,15 @@ import java.util.List;
 
 import org.dfm.miniproject.miniproject.dto.BoardDTO;
 import org.dfm.miniproject.miniproject.mapper.BoardMapper;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
-import net.minidev.json.JSONObject;
+import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 public class MasterController {
@@ -22,18 +21,14 @@ public class MasterController {
 	@Autowired
 	BoardMapper boardMapper;
 	
-   
-    @RequestMapping(value = "/master/list.do", method=RequestMethod.GET)
-    public ModelAndView list(@ModelAttribute BoardDTO boardDTO) throws Exception{
-    	//JSONObject jsonobj = new JSONObject();
-    	ModelAndView mav = new ModelAndView();
+    @RequestMapping(value = "/master/list.do")
+    public String list(@ModelAttribute BoardDTO boardDTO) throws Exception{
+    	JSONObject jsonobj = new JSONObject();
     	List<BoardDTO> boardList = new ArrayList<>();
-    	boardList = boardMapper.getAllBoardList();
-    	
-    	System.out.println(boardList);
-    	
-    	mav.addObject("list", boardList);
-        return mav;
+    	boardList = boardMapper.getAllBoardList(boardDTO);
+    	jsonobj.put("list", boardList);
+    	jsonobj.put("nextOffset", boardDTO.getOffset()+boardDTO.getCount());
+        return jsonobj.toString();
     }
 
     @RequestMapping("/master/delete.do")
