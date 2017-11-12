@@ -94,7 +94,9 @@ header h2 {
 
 /* nickname input */
 label {
+  display: block;
   font-size: 13px;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
