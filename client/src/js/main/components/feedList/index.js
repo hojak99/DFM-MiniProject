@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Title from './Title'
 import Feed from './Feed'
+import Loading from './Loading'
 
 import HttpClient from '../../../network/HttpClient'
 
@@ -53,7 +54,7 @@ class FeedList extends Component {
 
             })
             .catch((e)=>{
-                alert('Network Error');
+                console.log('Network Error');
             })
     }
 
@@ -97,6 +98,7 @@ class FeedList extends Component {
             <div className="feedList">
                 <Title/>
                 {feedList}
+                {this.state.fetch ? <Loading/> : ''}
             </div>
         );
     }
