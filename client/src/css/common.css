@@ -16,5 +16,6 @@ body, button, input, select, table, textarea, pre {
     -webkit-focus-ring-color: transparent;
     -webkit-text-size-adjust: none;
     outline: none !important;
+    font-family: NanumBarunGothicOTF;
     color: #000;
 }

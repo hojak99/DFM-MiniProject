@@ -79,6 +79,7 @@ body {
     font-family: PTSans;
     font-size: 14px;
     font-weight: bold;
+    line-height: 1;
     letter-spacing: -0.2px;
     color: #898b93;
 }
