@@ -16,6 +16,6 @@ body, button, input, select, table, textarea, pre {
     -webkit-focus-ring-color: transparent;
     -webkit-text-size-adjust: none;
     outline: none !important;
-    font-family: NanumBarunGothicOTF;
+    font-family: 'PT Sans', 'Nanum Barun Gothic', sans-serif;
     color: #000;
 }
