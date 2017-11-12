@@ -7,8 +7,10 @@ class Feed extends Component {
     };
 
     render() {
+        const feedClassState = this.props.isDetail ? "feed detail" : "feed";
+
         return (
-            <div className="feed">
+            <div className={feedClassState} data-id={this.props.dataId} onClick={this.props.handleClickFeed}>
                 <div className="date">
                     <span>{this.props.date}</span>
                 </div>
