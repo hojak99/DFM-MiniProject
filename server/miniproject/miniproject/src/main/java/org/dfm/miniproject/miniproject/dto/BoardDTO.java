@@ -58,11 +58,4 @@ public class BoardDTO {
 	public void setCrt_time(Date crt_time) {
 		this.crt_time = crt_time;
 	}
-
-	@Override
-	public String toString() {
-		return "BoardDTO [seq=" + seq + ", title=" + title + ", content=" + content + ", user_id=" + user_id
-				+ ", open_yn=" + open_yn + ", crt_time=" + crt_time + "]";
-	}
-
 }
