@@ -4,7 +4,7 @@
 
 <mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
-	<select id = "getOpenBoardList">
+	<select id = "getOpenBoardList"  resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
 		select
 			*
 		from
@@ -45,4 +45,10 @@
 		where
 			seq = #{seq}
 	</update>
+
+	<insert id="insertBoard" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		insert into board (title, content, user_id)
+		values 
+		(#{title}, #{content}, #{user_id})
+	</insert>
 </mapper>
