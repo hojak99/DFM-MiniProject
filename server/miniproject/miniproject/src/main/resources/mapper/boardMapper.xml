@@ -11,6 +11,7 @@
 			board
 		where
 			open_yn = 'Y'
+		LIMIT #{offset}, #{count}
 	</select>
 
 	<select id = "getAllBoardList" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">

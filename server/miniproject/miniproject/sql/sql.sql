@@ -10,6 +10,6 @@ CREATE TABLE `board` (
   PRIMARY KEY (`seq`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3;
 
-select * from board;
+select * from board where open_yn = 'Y' limit 5, 1;
 
 insert into board (seq, title, content, user_id, open_yn) values (7, 'asdasd', 'asdasd', 'hojak', 'Y');

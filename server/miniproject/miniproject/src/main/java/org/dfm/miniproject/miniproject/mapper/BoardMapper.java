@@ -9,6 +9,7 @@ public interface BoardMapper {
 	public BoardDTO getBoard(BoardDTO boardDTO);
 	public void delete(BoardDTO boardDTO);
 	public void secret(BoardDTO boardDTO);
-	public List<BoardDTO> getOpenBoardList();
+	
+	public List<BoardDTO> getOpenBoardList(BoardDTO boardDto);
 	public void insertBoard(BoardDTO boardDto);
 }

@@ -22,12 +22,13 @@ public class UserController {
 	BoardMapper boardMapper;
 	
 	@RequestMapping(value="/user/list.do", method=RequestMethod.GET)
-	public ModelAndView getUserBoardList() {
+	public ModelAndView getUserBoardList(@ModelAttribute("BoardDTO") BoardDTO boardDto) {
 		ModelAndView mav = new ModelAndView(new MappingJackson2JsonView());
 		
-		List<BoardDTO> boardList = boardMapper.getOpenBoardList();
+		List<BoardDTO> boardList = boardMapper.getOpenBoardList(boardDto);
 
-		mav.addObject("type", "READ");
+		boardDto.setNextOffset(boardDto.getOffset() + boardDto.getCount() + 1);
+		mav.addObject("nextOffset", boardDto.getNextOffset());
 		mav.addObject("list", boardList);
 		
 		return mav;
