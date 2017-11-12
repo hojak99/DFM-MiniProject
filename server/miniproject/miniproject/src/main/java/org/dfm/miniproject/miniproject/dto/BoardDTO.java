@@ -1,7 +1,5 @@
 package org.dfm.miniproject.miniproject.dto;
 
-
-
 import java.util.Date;
 
 public class BoardDTO {
