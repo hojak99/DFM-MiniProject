@@ -4,7 +4,7 @@
 
 <mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
-	<select id = "getOpenBoardList"  resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+	<select id = "getOpenBoardList" parameterType="java.util.Map" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
 		select
 			*
 		from

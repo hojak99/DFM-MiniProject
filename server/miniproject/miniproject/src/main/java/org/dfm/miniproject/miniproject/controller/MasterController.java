@@ -25,10 +25,10 @@ public class MasterController {
     @RequestMapping(value = "/master/list.do")
     public ModelAndView list(@ModelAttribute BoardDTO boardDTO) throws Exception{
     	ModelAndView mav = new ModelAndView(new MappingJackson2JsonView());
-    	List<BoardDTO> boardList = new ArrayList<>();
-    	boardList = boardMapper.getAllBoardList(boardDTO);
-    	mav.addObject("list", boardList);
-    	mav.addObject("nextOffset", boardDTO.getOffset()+boardDTO.getCount());
+//    	List<BoardDTO> boardList = new ArrayList<>();
+//    	boardList = boardMapper.getAllBoardList(boardDTO);
+//    	mav.addObject("list", boardList);
+//    	mav.addObject("nextOffset", boardDTO.getOffset()+boardDTO.getCount());
         return mav;
     }
 
