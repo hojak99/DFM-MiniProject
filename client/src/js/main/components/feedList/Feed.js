@@ -19,7 +19,7 @@ class Feed extends Component {
                     <span>{this.props.writer}</span>
                 </div>
                 <div className="contents">
-                    <span>{this.props.contents}</span>
+                    <div>{this.props.contents}</div>
                 </div>
             </div>
         );
