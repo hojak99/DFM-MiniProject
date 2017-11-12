@@ -19,11 +19,16 @@
     <section class="formArea">
       <form action="">
         <h1>글쓰기</h1>
-        <textarea name="text" placeholder="이야기를 풀어보세요." class="textBox"></textarea>
+        <div class="textBox">
+          <textarea class="box" name="text" maxlength="500" placeholder="이야기를 풀어보세요."></textarea>
+          <div class="textCounter">
+            <span class="count">0</span> / 500자
+          </div>
+        </div>
         <label for="name">닉네임</label>
-        <input id="name" type="text" placeholder="최대 10자" class="inputBox">
+        <input id="name" class="inputBox" maxlength="10" type="text" placeholder="최대 10자">
       </form>
-      <button id="submit" class="mainBtn" type="submit">작성하기</button>
+      <button id="submit" class="btnMain btnActive" type="submit">작성하기</button>
     </section>
   </div>
 <script src="/js/bundle.write.js"></script>
