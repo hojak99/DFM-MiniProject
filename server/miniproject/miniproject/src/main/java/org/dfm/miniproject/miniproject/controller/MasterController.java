@@ -5,13 +5,14 @@ import java.util.List;
 
 import org.dfm.miniproject.miniproject.dto.BoardDTO;
 import org.dfm.miniproject.miniproject.mapper.BoardMapper;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 
 
@@ -22,13 +23,13 @@ public class MasterController {
 	BoardMapper boardMapper;
 	
     @RequestMapping(value = "/master/list.do")
-    public String list(@ModelAttribute BoardDTO boardDTO) throws Exception{
-    	JSONObject jsonobj = new JSONObject();
+    public ModelAndView list(@ModelAttribute BoardDTO boardDTO) throws Exception{
+    	ModelAndView mav = new ModelAndView(new MappingJackson2JsonView());
     	List<BoardDTO> boardList = new ArrayList<>();
     	boardList = boardMapper.getAllBoardList(boardDTO);
-    	jsonobj.put("list", boardList);
-    	jsonobj.put("nextOffset", boardDTO.getOffset()+boardDTO.getCount());
-        return jsonobj.toString();
+    	mav.addObject("list", boardList);
+    	mav.addObject("nextOffset", boardDTO.getOffset()+boardDTO.getCount());
+        return mav;
     }
 
     @RequestMapping("/master/delete.do")
@@ -56,12 +57,12 @@ public class MasterController {
     	return boardOpenYNVal;
     }
 
-/*    @RequestMapping("/master/search.do")
-    public ModelAndView search() throws Exception{
-    	ModelAndView mav = new ModelAndView();
+    @RequestMapping("/master/search.do")
+    public ModelAndView search(@ModelAttribute BoardDTO boardDTO) throws Exception{
+    	ModelAndView mav = new ModelAndView(new MappingJackson2JsonView());
     	List<BoardDTO> boardList = new ArrayList<>();
-    	boardList = boardMapper.getAllBoardList();
+    	boardList = boardMapper.getAllBoardList(boardDTO);
     	mav.addObject("list", boardList);
         return mav;
-    }*/
+    }
 }

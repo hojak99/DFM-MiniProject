@@ -18,6 +18,10 @@
 			*
 		FROM
 			board
+		<if test="user_id != null and user_id != '' " >
+			WHERE
+				user_id like concat('%',#{user_id},'%')
+		</if>
 		ORDER BY
 			seq DESC
 		LIMIT #{offset}, #{count}

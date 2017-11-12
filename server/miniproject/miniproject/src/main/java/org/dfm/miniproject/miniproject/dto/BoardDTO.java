@@ -94,5 +94,4 @@ public class BoardDTO {
 				+ ", nextOffset=" + nextOffset + "]";
 	}
 
-
 }
