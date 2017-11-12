@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-
 <mapper namespace="org.dfm.miniproject.miniproject.mapper.BoardMapper" >
 
 	<select id = "getOpenBoardList"  resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
@@ -15,12 +14,41 @@
 	</select>
 
 	<select id = "getAllBoardList" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
-		select
+		SELECT
 			*
-		from
+		FROM
 			board
+		ORDER BY
+			seq DESC
+		LIMIT #{offset}, #{count}
+	</select>
+
+	<select id = "getBoard" resultType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		SELECT
+			*
+		FROM
+			board
+		WHERE
+			seq = #{seq}
 	</select>
 	
+	<delete id = "delete" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		DELETE
+		FROM
+			board
+		WHERE
+			seq = #{seq}
+	</delete>
+
+	<update id = "secret" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
+		UPDATE
+			board
+		SET
+			open_yn = #{open_yn}
+		WHERE
+			seq = #{seq}
+	</update>
+
 	<insert id="insertBoard" parameterType="org.dfm.miniproject.miniproject.dto.BoardDTO">
 		insert into board (title, content, user_id)
 		values 

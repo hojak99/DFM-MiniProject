@@ -1,6 +1,7 @@
 package org.dfm.miniproject.miniproject.dto;
 
-import java.security.Timestamp;
+
+
 import java.util.Date;
 
 public class BoardDTO {
@@ -10,9 +11,36 @@ public class BoardDTO {
 	private String user_id;
 	private String open_yn;
 	private Date crt_time;
+	private int offset;
+	private int count;
+	private int nextOffset;
 
 	public int getSeq() {
 		return seq;
+	}
+
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getNextOffset() {
+		return nextOffset;
+	}
+
+	public void setNextOffset(int nextOffset) {
+		this.nextOffset = nextOffset;
 	}
 
 	public void setSeq(int seq) {
