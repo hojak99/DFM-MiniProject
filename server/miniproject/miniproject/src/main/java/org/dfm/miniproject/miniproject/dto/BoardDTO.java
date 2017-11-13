@@ -9,6 +9,33 @@ public class BoardDTO {
 	private String user_id;
 	private String open_yn;
 	private Date crt_time;
+	private int offset;
+	private int count;
+	private int nextOffset;
+
+	public int getOffset() {
+		return offset;
+	}
+
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getNextOffset() {
+		return nextOffset;
+	}
+
+	public void setNextOffset(int nextOffset) {
+		this.nextOffset = nextOffset;
+	}
 
 	public int getSeq() {
 		return seq;
@@ -56,6 +83,13 @@ public class BoardDTO {
 
 	public void setCrt_time(Date crt_time) {
 		this.crt_time = crt_time;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardDTO [seq=" + seq + ", title=" + title + ", content=" + content + ", user_id=" + user_id
+				+ ", open_yn=" + open_yn + ", crt_time=" + crt_time + ", offset=" + offset + ", count=" + count
+				+ ", nextOffset=" + nextOffset + "]";
 	}
 
 }
