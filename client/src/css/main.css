@@ -69,6 +69,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 8px 18px 0 rgba(137, 139, 147, 0.13);
     word-break: keep-all;
+    transition: .12s ease-out;
 }
 
 .feed:last-child {
@@ -129,9 +130,13 @@ body {
 
 /* Feed Detail */
 .feed.detail {
-    margin: 0 0 24px;
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 48px 32px;
     border: none;
+    border-radius: 0;
     box-shadow: none;
+    transition: all .08s ease-out;
 }
 
 .feed.detail .title{
