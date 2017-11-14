@@ -28,10 +28,25 @@
         </div>
         <label for="name">닉네임</label>
         <input required id="name" class="inputBox" maxlength="10" type="text" placeholder="최대 10자">
+        <button id="submit" type="submit" value="Submit">작성하기</button>
       </form>
-      <button id="submit" class="btnMain btnActive" type="submit">작성하기</button>
     </section>
   </div>
 <script src="/js/bundle.write.js"></script>
+<script>
+// enter key를 누르면 바로 다음 field로 auto tab 되게 해주세용~
+  onKeyDown(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault()
+        const inputs =
+            Array.prototype.slice.call(document.querySelectorAll("input"))
+        const index =
+            (inputs.indexOf(document.activeElement) + 1) % inputs.length
+        const input = inputs[index]
+        input.focus()
+        input.select()
+    }
+  }
+</script>
 </body>
 </html>
