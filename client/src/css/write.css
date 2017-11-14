@@ -1,6 +1,6 @@
 /*** Global ***/
-body {
-  font-family: 'PT Sans', 'Nanum Barun Gothic', sans-serif;
+* {
+  box-sizing: border-box;
 }
 
 .wrapper {
@@ -11,7 +11,7 @@ body {
 header {
   width: 100%;
   height: 28px;
-  margin: 24px 0;
+  margin: 24px 0 40px 0;
 }
 
 .logo {
@@ -25,6 +25,7 @@ header h2 {
   display: block;
   float: left;
   margin-left: 8px;
+  padding-top: 1px;
   font-size: 21px;
   font-weight: 700;
   line-height: 28px;
@@ -63,23 +64,36 @@ header h2 {
   transition: .25s ease-in-out;
 }
 
+.box:required:not(:focus):valid, .inputBox:required:not(:focus):valid {
+  background: #fff;
+  color: #6D707B;
+  padding-left: 0;
+  transition: .25s ease-in-out;
+}
+
+.inputBox:required:not(:focus):valid {
+  height: inherit;
+}
+
+.box:required:not(:focus):valid {
+  padding-top: 0;
+}
+
 .box::placeholder, .inputBox::placeholder {
   color: #A8A9AB;
 }
 
 /* textarea */
 .textBox {
-  box-sizing: border-box;
   position: relative;
   width: 100%;
-  height: 385px;
+  height: inherit;
   margin-bottom: 32px;
 }
 
 .box {
-  box-sizing: border-box;
   width: 100%;
-  height: 385px;
+  height: 370px;
   padding: 24px 16px;
   transition: all 0.3 ease-in-out;
 }
@@ -95,13 +109,13 @@ header h2 {
 /* nickname input */
 label {
   display: block;
+  margin-bottom: 12px;
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 12px;
+  color: #585A62;
 }
 
 .inputBox {
-  box-sizing: border-box;
   width: 100%;
   height: 48px;
   margin-bottom: 24px;
@@ -109,30 +123,31 @@ label {
 }
 
 /* button */
-.btnMain {
+button {
   width: 100%;
   height: 48px;
+  margin-bottom: 32px;
   border-radius: 5px;
   font-size: 17px;
   line-height: 48px;
   letter-spacing: -.2;
-}
-
-.btnDisabled {
-  background: #B3B3B5;
-  color: #FFF;
-  text-shadow: 0 2px 4px rgba(137, 139, 147, 0.64);
-}
-
-.btnActive {
   background: #F44D43;
   color: #FFF;
   text-shadow: 0 2px 4px rgba(205, 43, 33, 0.84);
 }
 
-.btnActive:focus {
+form:invalid button {
+  opacity: 0;
+}
+
+form:valid button{
+  opacity: 1;
+  transition: .3s ease-in-out;
+}
+
+form:valid button:focus {
   background: #DA382E;
-  transition: .15s ease-in;
+  transition: .2s ease-in;
 }
 
 /* clearfix */
