@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>딮숲 - 작성하기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densitydpi=medium-dpi">
-    <link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/write.css">
 </head>
 <body>
@@ -19,7 +16,10 @@
     <section class="formArea">
       <form action="">
         <h1>글쓰기</h1>
+        <label for="title">제목</label>
+        <input id="title" class="inputBox" maxlength="24" type="text" placeholder="제목을 입력해주세요.">
         <div class="textBox">
+          <label for="text">나의 이야기</label>
           <textarea class="box" name="text" maxlength="500" placeholder="이야기를 풀어보세요."></textarea>
           <div class="textCounter">
             <span class="count">0</span> / 500자
