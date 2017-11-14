@@ -1,3 +1,33 @@
+/*** Nanum Barun Gothic Font ***/
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nanum Barun Gothic Regular'), local('Nanum Barun Gothic-Regular'), local('NanumBarunGothic Regular');
+  src: url(./NanumBarunGothic.eot);
+  src: url(./NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+       url(./NanumBarunGothic.woff) format('woff'),
+       url(./NanumBarunGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nanum Barun Gothic Bold'), local('Nanum Barun Gothic-Bold'), local('NanumBarunGothic Bold');
+  src: url(./NanumBarunGothicBold.eot);
+  src: url(./NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+       url(./NanumBarunGothicBold.woff) format('woff'),
+       url(./NanumBarunGothicBold.ttf) format('truetype');
+}
+
+/*** PT Sans Font ***/
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+/*** Font End ***/
+
+
 body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
     margin: 0;
     padding: 0;
