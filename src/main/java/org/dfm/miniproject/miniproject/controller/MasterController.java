@@ -3,14 +3,9 @@ package org.dfm.miniproject.miniproject.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.synth.SynthSpinnerUI;
-
 import org.dfm.miniproject.miniproject.dto.BoardDTO;
 import org.dfm.miniproject.miniproject.mapper.BoardMapper;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
